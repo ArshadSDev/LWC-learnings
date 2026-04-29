@@ -1,0 +1,35 @@
+<template>
+    <lightning-card title="Master LWC with Top 5 Concepts">
+        <div class="slds-p-around_medium">
+            <template iterator:it={lwcConcepts}>
+                <div key={it.value.id}>
+                    <template lwc:if={it.first}>
+                        <div class="slds-grid css-header">
+                            <div class="slds-col slds-theme_shade slds-theme_alert-texture slds-size_1-of-2">
+                                <P>Topics</P>
+                            </div>
+                            <div class="slds-col slds-theme_shade slds-theme_alert-texture slds-size_1-of-2">
+                                <p>concepts</p>
+                            </div>
+                        </div>
+                    </template>
+                    <div class="slds-grid slds-p-top_small slds-border_top css-topics-concpets">
+                        <div class="slds-col slds-size_1-of-2 css-topics">
+                            <p>{it.value.Topics}</p>
+                        </div>
+                        <div class="slds-col slds-size_1-of-2 css-concepts">
+                            <p>{it.value.Concepts}</p>
+                        </div>
+                    </div>
+                    <template lwc:if={it.last}>
+                        <div class="css-employee-last">
+                            <a href="www.salesforce.com">www.salesforce.com</a>
+                        </div>
+                        
+                    </template>
+               </div>
+            </template>
+        </div>
+    </lightning-card>
+        
+</template>

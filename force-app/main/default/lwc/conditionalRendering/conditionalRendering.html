@@ -1,0 +1,53 @@
+<template>
+    <lightning-card title="Conditional Rendering">
+    <div class="slds-p-around_medium">
+        <b>Choose your Interest :</b>
+        <div>
+            <lightning-input type="checkbox" label="Shopping" class="js-shoppingCheckbox" lwc:ref="refshoppingBox" onchange={handleShoppingChange}></lightning-input>
+        </div>
+        <div>
+            <lightning-input type="checkbox" label="Reading" class="js-readingCheckbox" lwc:ref="refreadingBox" onchange={handleReadingChange}></lightning-input>
+        </div>
+    </div>
+    <template lwc:if={isShoppingChecked} >
+        <lightning-card title="Shopping Interest">
+            <div class="slds-p-around_medium">
+            <ul>
+                <li>
+                    <a href="https://www.amazon.in/">🛍️ Amazon</a>
+                </li>
+                <li>
+                    <a href="https://www.myntra.com/">🛍️ myntra</a>
+                </li>
+                <li>
+                    <a href="https://www.flipkart.com/">🛍️ flipkart</a>
+                </li>
+            </ul>
+        </div>
+        </lightning-card>
+   </template>
+   <template lwc:elseif={isReadingChecked}>
+        <lightning-card title="Reading Interest">
+            <div class="slds-p-around_medium">
+            <ul>
+                <li>
+                    <a href="https://www.goodreads.com/">📚 Goodreads</a>
+                </li>
+                <li>
+                    <a href="https://www.scribd.com/">📚 Scribd</a>
+                </li>
+                <li>
+                    <a href="https://www.scribd.com/">📚 Scribd</a>
+                </li>
+            </ul>
+        </div>
+        </lightning-card>
+   </template>
+   <template lwc:else>
+        <div class="slds-p-around_medium slds-align_absolute-center --slds-g-color-palette-red-50">
+            <b>Nothing Choosen</b>
+        </div>
+   </template>
+</lightning-card>
+
+</template>

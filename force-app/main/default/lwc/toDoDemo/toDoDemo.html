@@ -1,0 +1,30 @@
+<template>
+    <lightning-card title="To Do List">
+        <div class="slds-p-around_medium">
+            <div>
+                <template if:true={taskAvailable}>
+                    <template for:each={toDoList} for:item="task">
+                        <div key={task.taskId} class="slds-grid">
+                            <div class="slds-p-around_medium slds-col css-taskName">
+                                {task.name}
+                            </div>
+                            <div class="slds-p-around_medium slds-col css-taskName">
+                                <lightning-button-icon name={task.taskId} icon-name="utility:delete"  variant="container" onclick={handleDelete} ></lightning-button-icon>
+                            </div>
+                        </div>
+                    </template>
+                </template>
+                <template if:false={toDoList.length}>
+                    <div class="css-noTask">No tasks added yet.</div>
+                </template>
+            </div>
+            <div class="slds-p-around_medium slds-border_top">
+                <lightning-input  label="Enter New Task" value={newTask}  onchange={handleChange}></lightning-input>
+            </div>
+            <div class="slds-p-around_medium">
+                <lightning-button label="Add Task" variant="Brand" onclick={addTask}></lightning-button>
+            </div>
+            
+        </div>
+    </lightning-card>    
+</template>

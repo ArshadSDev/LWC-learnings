@@ -1,0 +1,16 @@
+:host{
+    font-weight: bold;
+    text-align: center;
+
+}
+
+.css-noTask{
+    color: red;
+    background-color: cornsilks;
+    padding: 20px;
+}
+
+.css-taskName{
+    color: blue;
+    background-color: rgb(109, 231, 231);
+}

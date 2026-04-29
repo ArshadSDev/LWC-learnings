@@ -1,0 +1,36 @@
+<template>
+    <lightning-card title="Template Looping DIY">
+        <div class="slds-p-around_medium">
+            <lightning-input type="text" label="Lead Name" class="js-name" onchange={handleChangeName}></lightning-input>
+            <lightning-input type="text" label="Lead Source" class="js-source" onchange={handleChangeSource}></lightning-input>
+            <lightning-input type="text" label="Annual Revenue" class="js-revenue" onchange={handleChangeRevenue}></lightning-input>
+            <lightning-input type="text" label="Email" class="js-email" onchange={handleChangeEmail}></lightning-input>
+        </div>
+        <lightning-button label="Adds" onclick={addLead}></lightning-button>
+        <lightning-button label="Clear" onclick={clearLeads}></lightning-button>
+        <lightning-button label="Display" onclick={displayLeads}></lightning-button>
+    </lightning-card>
+
+    <template lwc:if={showLeads}>
+        <lightning-card title="Lead Details">
+            <div class="slds-p-around_medium">
+                <template for:each={leads} for:item="lead" for:index="index">
+                    <div key={lead.index}>
+                        <div class="slds-box">
+                            <p>Name: {lead.name}</p>
+                            <p>Source: {lead.source}</p>
+                            <p>Revenue: {lead.revenue}</p>
+                            <p>Email: {lead.email}</p>
+                        </div>
+                    </div>                
+                </template>
+            </div>
+        </lightning-card>
+    </template>
+    <template lwc:else>
+        <div class="slds-p-around_medium">
+            No leads to display
+        </div>
+
+    </template>
+</template>

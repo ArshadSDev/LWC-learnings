@@ -1,0 +1,40 @@
+<template>
+    <lightning-card title="Template Looping">
+        <div class="slds-p-around_medium">
+            <template lwc:if={isArrayEmpty}>
+                 <template for:each={courses} for:item="course">
+                    <div key={courseId}>
+                        {course}
+                    </div>
+                </template>
+            </template>
+            <template lwc:else>
+                <div>
+                    No courses available
+                </div>
+            </template>
+        </div>
+        <div>
+            <lightning-input type="text" label="Add Course" onchange={handleChange}></lightning-input>
+        </div>
+        <div>
+            <lightning-button label="Add Course" onclick={addCourse}></lightning-button>
+        </div>
+    </lightning-card>  
+    <lightning-card title="Object template Looping">
+        
+        <div class="slds-p-around_medium">
+            <template for:each={studentDetails} for:item="student" for:index="index">
+                <div key={student.index}>
+                    <div class="slds-box">
+                        <p>Rollno: {student.rollno}</p>
+                        <p>Name: {student.name}</p>
+                        <p>Course: {student.course}</p>
+                    </div>
+                </div>                
+            </template>
+        </div>
+
+    </lightning-card>
+
+</template>

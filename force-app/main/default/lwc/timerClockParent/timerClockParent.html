@@ -1,0 +1,17 @@
+<template>
+    <lightning-card title="Timer Clock">
+        <div class="slds-p-around_medium slds-grid">
+            <div class="slds-col sld">
+                <lightning-button variant="brand" label="Start" onclick={onClickStart}></lightning-button>
+            </div>
+            <div class="slds-col">
+                <lightning-button variant="destructive" label="Stop" onclick={onClickStop}></lightning-button>
+            </div> 
+            <div class="slds-col">
+                <lightning-button variant="success" label="Reset" onclick={onClickReset}></lightning-button>
+            </div>
+            
+        </div>
+        <c-timer-clock-child lwc:ref="child"></c-timer-clock-child>
+    </lightning-card>
+</template>

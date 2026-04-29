@@ -1,0 +1,8 @@
+<template>
+    <lightning-card title="Volume Component">
+        <div class="slds-p-around_medium">
+            <lightning-slider label="Volume" value={val} onchange={onChangeEvent}></lightning-slider>
+            <c-child-vol-component current-slider-value={currentSliderValue}></c-child-vol-component>
+        </div>
+    </lightning-card>
+</template>

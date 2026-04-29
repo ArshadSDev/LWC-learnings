@@ -1,0 +1,27 @@
+.css-employee-last{
+    color:blue;
+    text-align: center;
+}
+
+.css-topics{
+    color: brown;
+    font-weight: bold;
+    /* text-align: left; */
+}
+
+.css-concepts{
+    font-weight: bold;
+    color: rgb(9, 9, 114);
+    /* text-align: left; */
+}
+.css-header{
+    font-weight: bold;
+    padding-bottom: 5px;
+}
+.css-topics-concpets{
+    padding: 5px 0px 5px 0px;
+}
+
+/* .css-header{
+    
+} */
