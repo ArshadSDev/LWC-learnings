@@ -1,0 +1,6 @@
+.small-image img {
+    max-width: 150px;
+    /* max-height: 150px;
+    object-fit: contain;
+    margin: 0 auto; */
+}
