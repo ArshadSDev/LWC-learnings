@@ -1,0 +1,16 @@
+<template>
+    <lightning-card title="Modal Screen Parent">
+        <div class="slds-p-around_medium">
+            <lightning-button label="Open Modal" onclick={handleOpenModal}></lightning-button>
+        </div>
+        <template lwc:if={showChildModal}>
+            <c-modal-screen-child onclose={handleCloseEvent}></c-modal-screen-child>        
+        </template>
+        <template lwc:else>
+            <template for:each={parentArray} for:item="selected">
+                <div key={selected} >{selected} </div>
+            </template>
+    </template>
+        
+    </lightning-card>
+</template> 
