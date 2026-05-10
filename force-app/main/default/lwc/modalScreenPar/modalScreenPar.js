@@ -18,6 +18,6 @@ export default class ModalScreenPar extends LightningElement {
             console.log(item);
             this.parentArray=[...this.parentArray, item];
         });
-        console.log(JSON.stringify(this.parentArray));
+        
     }
 }

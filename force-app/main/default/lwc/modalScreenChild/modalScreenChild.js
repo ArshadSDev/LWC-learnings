@@ -3,7 +3,8 @@ import { LightningElement,track } from 'lwc';
 
 export default class ModalScreenChild extends LightningElement {
 
-
+    timer=0;
+    stoptimer;
     @track myarray=[]
     handleClickEvent(){
 
@@ -40,4 +41,22 @@ export default class ModalScreenChild extends LightningElement {
         }
         console.log(JSON.stringify(this.myarray));
     }
+
+    connectedCallback(){
+        console.log("connected call back called and timer called");
+        this.stopclock();
+    }
+
+    stopclock(){
+        this.stoptimer=setInterval(() => {
+            this.timer++;
+        }, 1000);
+    }
+
+    disconnectedCallback(){
+        console.log("Component removed from dom");
+        clearInterval(this.stoptimer);
+        console.log('Time cleared at',this.timer);
+    }
+
 }
