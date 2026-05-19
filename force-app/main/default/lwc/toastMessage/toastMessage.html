@@ -1,0 +1,26 @@
+<template>
+    <lightning-card title="Toast message Buttons">
+        <div class="slds-p-around_medium">
+            <lightning-button 
+              variant="success"
+              label="Success" 
+              onclick={handleToastClick} 
+            ></lightning-button>
+            <lightning-button 
+              variant="destructive"
+              label="Error" 
+              onclick={handleToastClick} 
+            ></lightning-button>
+            <lightning-button 
+              variant="brand-outline"
+              label="Info" 
+              onclick={handleToastClick} 
+            ></lightning-button>
+            <lightning-button 
+              variant="destructive-text"
+              label="Warning" 
+              onclick={handleToastClick} 
+            ></lightning-button>
+        </div>
+    </lightning-card>
+</template>
