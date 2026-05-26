@@ -1,0 +1,13 @@
+<template>
+    <lightning-card title="Record Form LWC">
+        <div class="slds-p-around_medium">
+            <lightning-record-form 
+            object-api-name={objectApiName}
+            layout-type="Compact"
+            record-id={recordId}
+            
+            onsuccess={onSuccessEventHandler}>
+            </lightning-record-form>
+        </div>
+    </lightning-card>
+</template>
