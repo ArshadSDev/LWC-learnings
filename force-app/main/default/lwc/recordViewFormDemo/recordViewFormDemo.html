@@ -1,0 +1,24 @@
+<template>
+    <lightning-card title="Record-vew for">
+        <div class="slds-p-around_medium">
+            <lightning-record-view-form
+            object-api-name={objectApiName}
+            record-id="a01dM00003ItDYbQAN"
+            >   
+            <div class="slds-grid slds-gutters">
+                <div class="slds-col slds-size_4-of-12">
+                    <lightning-output-field field-name={name}></lightning-output-field>
+                    <lightning-output-field field-name={Age}></lightning-output-field>
+                </div>
+                <div class="slds-col slds-size_4-of-12">
+                    <lightning-output-field field-name={Departments}></lightning-output-field>
+                    <lightning-output-field field-name={joiningDate}></lightning-output-field>
+                </div>
+                <div class="slds-col slds-size_4-of-12">
+                    <lightning-output-field field-name={state}></lightning-output-field>
+                </div>
+           </div>
+        </lightning-record-view-form>
+        </div>
+    </lightning-card>
+</template>
