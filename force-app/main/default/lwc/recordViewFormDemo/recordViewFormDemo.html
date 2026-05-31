@@ -3,7 +3,7 @@
         <div class="slds-p-around_medium">
             <lightning-record-view-form
             object-api-name={objectApiName}
-            record-id="a01dM00003ItDYbQAN"
+            record-id={recordId}
             >   
             <div class="slds-grid slds-gutters">
                 <div class="slds-col slds-size_4-of-12">
@@ -16,6 +16,7 @@
                 </div>
                 <div class="slds-col slds-size_4-of-12">
                     <lightning-output-field field-name={state}></lightning-output-field>
+                    <lightning-output-field field-name="District__c"></lightning-output-field>
                 </div>
            </div>
         </lightning-record-view-form>
