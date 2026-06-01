@@ -20,8 +20,9 @@ export default class RecordEditFormContact extends LightningElement {
         event.preventDefault();
         const fields = event.detail.fields;
         console.log('Account Value',+ this.refs.accountName.value);
-        console.log('Account Value event',+ event.detail.fields.Account);
-        if( this.refs.titleValue.value === 'VIP' && this.refs.accountName.value === null ){
+        console.log('Account Value event',+ fields);
+        console.log('fields',event.detail.fields);
+        if( this.refs.titleValue.value === 'VIP' && !fields.AccountId){
             this.dispatchEvent(new ShowToastEvent({
                 title: 'Information !',
                 message: 'Account Name Cant be empty.',
@@ -29,7 +30,8 @@ export default class RecordEditFormContact extends LightningElement {
             }));
         }
         else {
-            this.refs.description.value = 'VIP';
+            fields.Title == 'VIP' ? fields.Description = 'VIP DES' : fields.Description = 'General'; 
+            
             this.refs.contactForm.submit(fields);
             this.dispatchEvent(new ShowToastEvent({
                 title: 'Information !',
@@ -37,8 +39,15 @@ export default class RecordEditFormContact extends LightningElement {
                 variant: 'success', // 'success', 'error', 'warning', or 'info'
             }));
         }
-        
-
     }
+    handleSuccess(event){
+        console.log(event.detail);
+        console.log(event.detail.id);
+            this.dispatchEvent(new ShowToastEvent({
+                title: 'Success !',
+                message: 'record submitted successfully.'+event.detail.id ,
+                variant: 'success', // 'success', 'error', 'warning', or 'info'
+            }));
+        }
 
 }
