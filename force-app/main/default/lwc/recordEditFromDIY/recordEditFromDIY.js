@@ -4,6 +4,7 @@ import LastName from '@salesforce/schema/Contact.LastName';
 import source from '@salesforce/schema/Contact.Source__c';
 import email from '@salesforce/schema/Contact.Email';
 import phone from '@salesforce/schema/Contact.Phone';
+import accountName from '@salesforce/schema/Contact.AccountId';
 import { ShowToastEvent } from 'lightning/platformShowToastEvent';
 
 
@@ -13,9 +14,10 @@ export default class RecordEditFromDIY extends LightningElement {
     @api recordId;
     firstName = firstName;
     lastName = LastName;
-    source = source;
+    source = source; 
     email = email;
     phone = phone;
+    accountName = accountName;
     
     handleSubmitform(event){
         event.preventDefault()
@@ -23,6 +25,7 @@ export default class RecordEditFromDIY extends LightningElement {
         console.log(fields);
         console.log(this.refs.sourceValue.value);
         console.log('from refs')
+
         const SourceVal= this.refs.sourceValue.value
         if(SourceVal === 'Web' && !fields.Email)
         {
@@ -46,5 +49,10 @@ export default class RecordEditFromDIY extends LightningElement {
                 message: message,
                 variant: Variant, // 'success', 'error', 'warning', or 'info'
             }));
+    }
+    handleOnClickEvent(event){
+        const inputFields = this.template.querySelectorAll('lightning-input-field');
+        console.log(inputFields);
+        inputFields.forEach(field => field.reset());
     }
 }
