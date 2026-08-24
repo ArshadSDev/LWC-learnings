@@ -50,6 +50,8 @@ export default class RecordEditFromDIY extends LightningElement {
                 variant: Variant, // 'success', 'error', 'warning', or 'info'
             }));
     }
+
+    //cancel button to get back to old values
     handleOnClickEvent(event){
         const inputFields = this.template.querySelectorAll('lightning-input-field');
         console.log(inputFields);
