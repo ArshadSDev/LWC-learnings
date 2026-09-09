@@ -22,11 +22,13 @@ export default class RecordEditFromDIY extends LightningElement {
     handleSubmitform(event){
         event.preventDefault()
         const fields= event.detail.fields;
+
         console.log(fields);
+
         console.log(this.refs.sourceValue.value);
         console.log('from refs')
 
-        const SourceVal= this.refs.sourceValue.value
+        const SourceVal= this.refs.sourceValue.value;
         if(SourceVal === 'Web' && !fields.Email)
         {
             this.toastMessageHandler('Information !','Email cant be empty','info')
