@@ -1,0 +1,25 @@
+<template>
+    <lightning-card title="Account RecTypes & Picklist">
+        <div class="slds-m-around_medium">
+            <lightning-combobox
+                name="progress"
+                label="RecordType"
+                value={selectedRecordTypeId}
+                placeholder="Select Record Type"
+                options={recordtypeArray}
+                onchange={recordTypehandler} ></lightning-combobox>
+
+            <p>Selected record type is: {selectedRecordTypeId}</p>
+            
+                <lightning-combobox
+                    name="progress"
+                    label="Account Industry"
+                        value={selectedIndustry}
+                        placeholder="Select Industry"
+                    options={options}
+                    onchange={handleChange} ></lightning-combobox>
+
+                    <p>Selected industry is: {selectedIndustry}</p>
+        </div>
+    </lightning-card>
+</template>
